@@ -44,6 +44,8 @@ int main()
 	int y = 2;
 	const int* p1 = &x;
 	p1 = &y;
+	y = 3;
+	cout << *p1 << endl;
 	//*p1 = 3;
 	int* const p2 = &x;
 	//p2 = &y;

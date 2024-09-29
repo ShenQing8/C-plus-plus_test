@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\github Code\\C-plus-plus_test\\extern\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5A664865-BF56-4984-AB8A-CE86D6267A79}|Project1\\Project1.vcxproj|D:\\github Code\\C-plus-plus_test\\extern\\Project1\\\u5F15\u7528\u7684\u672C\u8D28.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5A664865-BF56-4984-AB8A-CE86D6267A79}|Project1\\Project1.vcxproj|solutionrelative:Project1\\\u5F15\u7528\u7684\u672C\u8D28.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A664865-BF56-4984-AB8A-CE86D6267A79}|Project1\\Project1.vcxproj|D:\\github Code\\C-plus-plus_test\\extern\\Project1\\\u5F15\u7528\u4F5C\u4E3A\u51FD\u6570\u8FD4\u56DE\u503C.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5A664865-BF56-4984-AB8A-CE86D6267A79}|Project1\\Project1.vcxproj|solutionrelative:Project1\\\u5F15\u7528\u4F5C\u4E3A\u51FD\u6570\u8FD4\u56DE\u503C.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A664865-BF56-4984-AB8A-CE86D6267A79}|Project1\\Project1.vcxproj|D:\\github Code\\C-plus-plus_test\\extern\\Project1\\\u5F15\u7528.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5A664865-BF56-4984-AB8A-CE86D6267A79}|Project1\\Project1.vcxproj|solutionrelative:Project1\\\u5F15\u7528.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A664865-BF56-4984-AB8A-CE86D6267A79}|Project1\\Project1.vcxproj|D:\\github Code\\C-plus-plus_test\\extern\\Project1\\\u5F15\u7528\u505A\u51FD\u6570\u53C2\u6570.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5A664865-BF56-4984-AB8A-CE86D6267A79}|Project1\\Project1.vcxproj|solutionrelative:Project1\\\u5F15\u7528\u505A\u51FD\u6570\u53C2\u6570.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 314,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "\u5F15\u7528\u7684\u672C\u8D28.cpp",
+              "DocumentMoniker": "D:\\github Code\\C-plus-plus_test\\extern\\Project1\\\u5F15\u7528\u7684\u672C\u8D28.cpp",
+              "RelativeDocumentMoniker": "Project1\\\u5F15\u7528\u7684\u672C\u8D28.cpp",
+              "ToolTip": "D:\\github Code\\C-plus-plus_test\\extern\\Project1\\\u5F15\u7528\u7684\u672C\u8D28.cpp*",
+              "RelativeToolTip": "Project1\\\u5F15\u7528\u7684\u672C\u8D28.cpp*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-29T11:37:41.437Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "\u5F15\u7528\u4F5C\u4E3A\u51FD\u6570\u8FD4\u56DE\u503C.cpp",
+              "DocumentMoniker": "D:\\github Code\\C-plus-plus_test\\extern\\Project1\\\u5F15\u7528\u4F5C\u4E3A\u51FD\u6570\u8FD4\u56DE\u503C.cpp",
+              "RelativeDocumentMoniker": "Project1\\\u5F15\u7528\u4F5C\u4E3A\u51FD\u6570\u8FD4\u56DE\u503C.cpp",
+              "ToolTip": "D:\\github Code\\C-plus-plus_test\\extern\\Project1\\\u5F15\u7528\u4F5C\u4E3A\u51FD\u6570\u8FD4\u56DE\u503C.cpp",
+              "RelativeToolTip": "Project1\\\u5F15\u7528\u4F5C\u4E3A\u51FD\u6570\u8FD4\u56DE\u503C.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-29T10:09:42.237Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "\u5F15\u7528\u505A\u51FD\u6570\u53C2\u6570.cpp",
+              "DocumentMoniker": "D:\\github Code\\C-plus-plus_test\\extern\\Project1\\\u5F15\u7528\u505A\u51FD\u6570\u53C2\u6570.cpp",
+              "RelativeDocumentMoniker": "Project1\\\u5F15\u7528\u505A\u51FD\u6570\u53C2\u6570.cpp",
+              "ToolTip": "D:\\github Code\\C-plus-plus_test\\extern\\Project1\\\u5F15\u7528\u505A\u51FD\u6570\u53C2\u6570.cpp",
+              "RelativeToolTip": "Project1\\\u5F15\u7528\u505A\u51FD\u6570\u53C2\u6570.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-29T10:02:41.143Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "\u5F15\u7528.cpp",
+              "DocumentMoniker": "D:\\github Code\\C-plus-plus_test\\extern\\Project1\\\u5F15\u7528.cpp",
+              "RelativeDocumentMoniker": "Project1\\\u5F15\u7528.cpp",
+              "ToolTip": "D:\\github Code\\C-plus-plus_test\\extern\\Project1\\\u5F15\u7528.cpp",
+              "RelativeToolTip": "Project1\\\u5F15\u7528.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-29T09:43:21.892Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
