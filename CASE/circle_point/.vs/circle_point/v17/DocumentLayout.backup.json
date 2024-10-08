@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\github Code\\C-plus-plus_test\\CASE\\circle_point\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4385D24D-09FA-431F-83AA-0441A4D2A9D4}|Project1\\Project1.vcxproj|D:\\github Code\\C-plus-plus_test\\CASE\\circle_point\\Project1\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4385D24D-09FA-431F-83AA-0441A4D2A9D4}|Project1\\Project1.vcxproj|solutionrelative:Project1\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4385D24D-09FA-431F-83AA-0441A4D2A9D4}|Project1\\Project1.vcxproj|D:\\github Code\\C-plus-plus_test\\CASE\\circle_point\\Project1\\point.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4385D24D-09FA-431F-83AA-0441A4D2A9D4}|Project1\\Project1.vcxproj|solutionrelative:Project1\\point.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4385D24D-09FA-431F-83AA-0441A4D2A9D4}|Project1\\Project1.vcxproj|D:\\github Code\\C-plus-plus_test\\CASE\\circle_point\\Project1\\point.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4385D24D-09FA-431F-83AA-0441A4D2A9D4}|Project1\\Project1.vcxproj|solutionrelative:Project1\\point.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4385D24D-09FA-431F-83AA-0441A4D2A9D4}|Project1\\Project1.vcxproj|D:\\github Code\\C-plus-plus_test\\CASE\\circle_point\\Project1\\circle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4385D24D-09FA-431F-83AA-0441A4D2A9D4}|Project1\\Project1.vcxproj|solutionrelative:Project1\\circle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4385D24D-09FA-431F-83AA-0441A4D2A9D4}|Project1\\Project1.vcxproj|D:\\github Code\\C-plus-plus_test\\CASE\\circle_point\\Project1\\circle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4385D24D-09FA-431F-83AA-0441A4D2A9D4}|Project1\\Project1.vcxproj|solutionrelative:Project1\\circle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 314,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "circle.cpp",
+              "DocumentMoniker": "D:\\github Code\\C-plus-plus_test\\CASE\\circle_point\\Project1\\circle.cpp",
+              "RelativeDocumentMoniker": "Project1\\circle.cpp",
+              "ToolTip": "D:\\github Code\\C-plus-plus_test\\CASE\\circle_point\\Project1\\circle.cpp",
+              "RelativeToolTip": "Project1\\circle.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-08T12:24:24.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "circle.h",
+              "DocumentMoniker": "D:\\github Code\\C-plus-plus_test\\CASE\\circle_point\\Project1\\circle.h",
+              "RelativeDocumentMoniker": "Project1\\circle.h",
+              "ToolTip": "D:\\github Code\\C-plus-plus_test\\CASE\\circle_point\\Project1\\circle.h",
+              "RelativeToolTip": "Project1\\circle.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwsAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-08T12:24:11.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "point.h",
+              "DocumentMoniker": "D:\\github Code\\C-plus-plus_test\\CASE\\circle_point\\Project1\\point.h",
+              "RelativeDocumentMoniker": "Project1\\point.h",
+              "ToolTip": "D:\\github Code\\C-plus-plus_test\\CASE\\circle_point\\Project1\\point.h",
+              "RelativeToolTip": "Project1\\point.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-08T12:18:21.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "point.cpp",
+              "DocumentMoniker": "D:\\github Code\\C-plus-plus_test\\CASE\\circle_point\\Project1\\point.cpp",
+              "RelativeDocumentMoniker": "Project1\\point.cpp",
+              "ToolTip": "D:\\github Code\\C-plus-plus_test\\CASE\\circle_point\\Project1\\point.cpp",
+              "RelativeToolTip": "Project1\\point.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-08T12:19:36.643Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "test.cpp",
+              "DocumentMoniker": "D:\\github Code\\C-plus-plus_test\\CASE\\circle_point\\Project1\\test.cpp",
+              "RelativeDocumentMoniker": "Project1\\test.cpp",
+              "ToolTip": "D:\\github Code\\C-plus-plus_test\\CASE\\circle_point\\Project1\\test.cpp",
+              "RelativeToolTip": "Project1\\test.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-08T11:45:46.833Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
