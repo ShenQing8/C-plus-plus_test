@@ -1,2 +1,3 @@
 ﻿  封装.cpp
+D:\github Code\C-plus-plus_test\Object_Oriented_encapsulation\Project1\封装.cpp(85,1): warning C4172: 返回局部变量的地址或临时 : x
   Project1.vcxproj -> D:\github Code\C-plus-plus_test\Object_Oriented_encapsulation\x64\Debug\Project1.exe

@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{C2820506-3B37-4D02-9617-7E9CFD5F76C2}|Project1\\Project1.vcxproj|D:\\github Code\\C-plus-plus_test\\Object_Oriented_encapsulation\\Project1\\\u5C01\u88C5.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C2820506-3B37-4D02-9617-7E9CFD5F76C2}|Project1\\Project1.vcxproj|solutionrelative:Project1\\\u5C01\u88C5.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C7C03B0-AFCE-490F-816B-F735543E8A87}|\u6DF1\u62F7\u8D1D\u4E0E\u6D45\u62F7\u8D1D\\\u6DF1\u62F7\u8D1D\u4E0E\u6D45\u62F7\u8D1D.vcxproj|D:\\github Code\\C-plus-plus_test\\Object_Oriented_encapsulation\\\u6DF1\u62F7\u8D1D\u4E0E\u6D45\u62F7\u8D1D\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3C7C03B0-AFCE-490F-816B-F735543E8A87}|\u6DF1\u62F7\u8D1D\u4E0E\u6D45\u62F7\u8D1D\\\u6DF1\u62F7\u8D1D\u4E0E\u6D45\u62F7\u8D1D.vcxproj|solutionrelative:\u6DF1\u62F7\u8D1D\u4E0E\u6D45\u62F7\u8D1D\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,17 +18,29 @@
       "DocumentGroups": [
         {
           "DockedWidth": 314,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "test.cpp",
+              "DocumentMoniker": "D:\\github Code\\C-plus-plus_test\\Object_Oriented_encapsulation\\\u6DF1\u62F7\u8D1D\u4E0E\u6D45\u62F7\u8D1D\\test.cpp",
+              "RelativeDocumentMoniker": "\u6DF1\u62F7\u8D1D\u4E0E\u6D45\u62F7\u8D1D\\test.cpp",
+              "ToolTip": "D:\\github Code\\C-plus-plus_test\\Object_Oriented_encapsulation\\\u6DF1\u62F7\u8D1D\u4E0E\u6D45\u62F7\u8D1D\\test.cpp",
+              "RelativeToolTip": "\u6DF1\u62F7\u8D1D\u4E0E\u6D45\u62F7\u8D1D\\test.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-09T07:49:44.186Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "\u5C01\u88C5.cpp",
               "DocumentMoniker": "D:\\github Code\\C-plus-plus_test\\Object_Oriented_encapsulation\\Project1\\\u5C01\u88C5.cpp",
               "RelativeDocumentMoniker": "Project1\\\u5C01\u88C5.cpp",
-              "ToolTip": "D:\\github Code\\C-plus-plus_test\\Object_Oriented_encapsulation\\Project1\\\u5C01\u88C5.cpp",
-              "RelativeToolTip": "Project1\\\u5C01\u88C5.cpp",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABEAAAADAAAAAAAAAA==",
+              "ToolTip": "D:\\github Code\\C-plus-plus_test\\Object_Oriented_encapsulation\\Project1\\\u5C01\u88C5.cpp*",
+              "RelativeToolTip": "Project1\\\u5C01\u88C5.cpp*",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAQwF4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-08T09:13:33.172Z",
               "EditorCaption": ""
