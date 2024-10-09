@@ -79,21 +79,10 @@ private:
 string Student::School = "UUU";
 int Student::School_Num = 123456;
 
-int& func(int x)
-{
-	x += 10;
-	return x;
-}
+
 
 int main()
 {
-	int a = 0;
-	a = func(a);
-	int& b = func(a);
-	cout << a << endl;
-	cout << b << endl;
-
-
 	Student stu("ÕÅÈý", 18, "2023666666", "ÄÐ");
 
 	Student stu2(stu);
