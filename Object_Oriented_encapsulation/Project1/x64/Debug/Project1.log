@@ -1,3 +1,3 @@
 ﻿  封装.cpp
-D:\github Code\C-plus-plus_test\Object_Oriented_encapsulation\Project1\封装.cpp(85,1): warning C4172: 返回局部变量的地址或临时 : x
+D:\github Code\C-plus-plus_test\Object_Oriented_encapsulation\Project1\封装.cpp(136,15): warning C4269: “p”: 用编译器生成的默认构造函数初始化的“const”自动数据产生不可靠的结果
   Project1.vcxproj -> D:\github Code\C-plus-plus_test\Object_Oriented_encapsulation\x64\Debug\Project1.exe

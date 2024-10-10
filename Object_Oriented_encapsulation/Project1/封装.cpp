@@ -27,7 +27,7 @@ public:
 		cout << "默认构造调用" << endl;
 	}
 	//初始化列表
-	Student(string name, int age, string id, string sex) :m_Name(name), m_Age(age), m_Id(id), m_Sex(sex)
+	Student(string name, int age, string id, string sex = "男") :m_Name(name), m_Age(age), m_Id(id), m_Sex(sex)
 	{
 		cout << "参数构造调用" << endl;
 		//m_Age = age;
@@ -83,7 +83,7 @@ int Student::School_Num = 123456;
 
 int main()
 {
-	Student stu("张三", 18, "2023666666", "男");
+	Student stu("张三", 18, "2023666666");
 
 	Student stu2(stu);
 	cout << stu2.m_Age<< endl;
