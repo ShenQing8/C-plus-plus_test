@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\github Code\\C-plus-plus_test\\Object_Oriented_polymorphism\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D1118144-F8BB-4F26-B17B-DBC9E0D4A445}|Project1\\Project1.vcxproj|D:\\github Code\\C-plus-plus_test\\Object_Oriented_polymorphism\\Project1\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D1118144-F8BB-4F26-B17B-DBC9E0D4A445}|Project1\\Project1.vcxproj|solutionrelative:Project1\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 329,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "test.cpp",
+              "DocumentMoniker": "D:\\github Code\\C-plus-plus_test\\Object_Oriented_polymorphism\\Project1\\test.cpp",
+              "RelativeDocumentMoniker": "Project1\\test.cpp",
+              "ToolTip": "D:\\github Code\\C-plus-plus_test\\Object_Oriented_polymorphism\\Project1\\test.cpp",
+              "RelativeToolTip": "Project1\\test.cpp",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAAHEAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-11T04:16:16.148Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
