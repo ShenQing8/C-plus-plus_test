@@ -1,125 +1,118 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
-class Person
+// 14届A组 A 幸运数
+
+//int main()
+//{
+//    // 10 ~ 99              1
+//    // 1000 ~ 9999          2
+//    // 100000 ~ 999999      3   
+//    // 10000000 ~ 99999999  4
+//    int start = 10;
+//    int end = 100;
+//    int tm = 100;
+//    int ans = 0;
+//    for (int i = 0; i < 4; ++i)
+//    {
+//        for (int j = start * pow(tm, i); j < end * pow(tm, i); ++j)
+//        {
+//            int tmp = j;
+//            int right = 0;
+//            int left = 0;
+//            for (int m = -i - 1; m < 0; ++m)
+//            {
+//                right += tmp % 10;
+//                tmp /= 10;
+//            }
+//            for (int m = -i - 1; m < 0; ++m)
+//            {
+//                left += tmp % 10;
+//                tmp /= 10;
+//            }
+//            if (left == right)
+//            {
+//                ++ans;
+//            }
+//        }
+//    }
+//
+//    cout << ans << endl;
+//
+//	return 0;
+//}
+// 大佬解法
+int a[5][50] = { 0 };//定义数组a[i][j] 表示i位数和为j，j最大为9*i； 
+void num(int x) 
 {
-	friend ostream& operator<< (ostream& cout, Person& p);
-
-public:
-	//ostream& operator<< (ostream& cout)
-	//{
-	//	cout << m_A << "\n";
-	//	cout << m_B << endl;
-	//	return cout;
-	//}
-
-	Person(int a, int b)
-	{
-		m_A = a;
-		m_B = b;
-	}
-
-private:
-	int m_A;
-	int m_B;
-};
-class MyInteger
-{
-	friend ostream& operator<< (ostream& cout, MyInteger& i);
-	friend MyInteger& operator++(MyInteger& i);
-	friend MyInteger operator++(MyInteger& i, int);
-
-public:
-	MyInteger()
-	{
-		m_Num = 0;
-	}
-	~MyInteger()
-	{
-		if (m_p != NULL)
-		{
-			delete m_p;
-			m_p = NULL;
-		}
-	}
-	void operator=(MyInteger& a)
-	{
-		if (m_p != NULL)
-		{
-			delete m_p;
-			m_p = NULL;
-		}
-		m_p = new int(*(a.m_p));
-	}
-
-	int* m_p;
-private:
-	int m_Num;
-};
-
-ostream& operator<< (ostream& cout, Person& p)
-{
-	cout << "m_A = " << p.m_A << "\n";
-	cout << "m_B = " << p.m_B << endl;
-	return cout;
-}	  
-ostream& operator<< (ostream& cout, MyInteger& i)
-{
-	cout << i.m_Num;
-	return cout;
+    int t = 0, sum = 0;//判断位数 
+    while (x) 
+    {
+        sum += x % 10;
+        x /= 10; t++;
+    }
+    a[t][sum]++;
 }
-MyInteger& operator++(MyInteger& i)//重载前置++
+int main() 
 {
-	//先加
-	i.m_Num += 1;
-	//后返回
-	return i;
-}
-MyInteger operator++(MyInteger& i, int)//重载后置++，未解决凑他直接输出不匹配的问题
-{
-	//先创建临时变量存储
-	MyInteger tmp = i;
-	//再加
-	i.m_Num += 1;
-	//后返回临时变量
-	return tmp;
+    int count = 0;
+    for (int i = 1; i <= 9999; i++) 
+    {
+        num(i);
+    }
+    for (int i = 1; i <= 4; i++) //左一半,1-4 
+    {
+        for (int j = 1; j <= i * 9; j++) 
+        {
+            for (int k = 1; k <= i; k++) //右一半只要比i小前面补0
+            {
+                count += a[i][j] * a[k][j];
+            }
+        }
+    }
+    cout << count << endl;
+    return 0;
 }
 
+// 14届B组 A 统计日期
 
-void test1()
-{
-	Person p1(10, 10);
-	//operator<< (cout, p1);
-	//p1 << cout << endl;
-	cout << p1 << endl;
-}
-void test2()
-{
-	MyInteger my_int;
-	cout << ++my_int << endl;
-	MyInteger tmp = my_int++;
-	cout << tmp << endl;
-	cout << my_int << endl;
-	//cout << my_int++ << endl;
-	//cout << operator++(my_int, 10) << endl;
-}
-void test3()
-{
-	MyInteger i;
-	MyInteger j;
-	++i;
-	i.m_p = new int(10);
-	j = i;
-	cout << "i的my_int = " << i << endl;
-	cout << "j的my_int = " << j << endl;
-}
+//int main()
+//{
+//    int arr[100] = {
+//          5, 6, 8, 6, 9, 1, 6, 1, 2, 4, 9, 1, 9, 8, 2, 3, 6, 4, 7, 7,
+//          5, 9, 5, 0, 3, 8, 7, 5, 8, 1, 5, 8, 6, 1, 8, 3, 0, 3, 7, 9,
+//          2, 7, 0, 5, 8, 8, 5, 7, 0, 9, 9, 1, 9, 4, 4, 6, 8, 6, 3, 3,
+//          8, 5, 1, 6, 3, 4, 6, 7, 0, 7, 8, 2, 7, 6, 8, 9, 5, 6, 5, 6,
+//          1, 4, 0, 1, 0, 0, 9, 4, 8, 0, 9, 1, 2, 8, 5, 0, 2, 5, 3, 3
+//    };
+//    int days_round[13] = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+//    int count = 0;
+//
+//    for (int m = 1; m < 13; ++m)
+//    {
+//        for (int day = 1; day <= days_round[m]; ++day)
+//        {
+//            int search_day[8] = { 2, 0, 2, 3, m / 10, m % 10, day / 10, day % 10 };
+//            int j = 0;
+//            for (int i = 0; i < 100; ++i)
+//            {
+//                if (search_day[j] == arr[i])
+//                {
+//                    ++j;
+//                    if (j == 8)
+//                    {
+//                        ++count;
+//                        break;
+//                    }
+//                }
+//            }
+//        }
+//    }
+//
+//    cout << count << endl;
+//
+//
+//    return 0;
+//}
 
-int main()
-{
-	//运算符重载
-	//test1();
-	//test2();
-	test3();
-
-	return 0;
-}

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+//#include <cstring>
 using namespace std;
 // 读写文件步骤：
 // 1、包含头文件 <fstream>
@@ -35,40 +36,76 @@ using namespace std;
 
 // 读文件
 
+//int main()
+//{
+//	ifstream ifs;
+//	ifs.open("test.txt", ios::in);
+//	if (!ifs.is_open())
+//	{
+//		cout << "文件打开失败" << endl;
+//		return 1;
+//	}
+//	// 读文件几种方式
+//	// 第一种: 直接全部读取
+//	//char buf[1024] = { 0 };
+//	//while (ifs >> buf)
+//	//{
+//	//	cout << buf << endl;
+//	//}
+//	// 第二种：一行行地读
+//	//char buf[1024] = { 0 };
+//	//while (ifs.getline(buf, sizeof(buf)))
+//	//{
+//	//	cout << buf << endl;
+//	//}
+//	// 第三种：用string字符串接收
+//	//string buf;
+//	//while (getline(ifs, buf))
+//	//{
+//	//	cout << buf << endl;
+//	//}
+//	 //第四种：一个字符一个字符地读，不推荐
+//	char c;
+//	while ((c = ifs.get()) != EOF)
+//	{
+//		cout << c;
+//	}
+//
+//	ifs.close();
+//
+//	return 0;
+//}
+
+// 二进制读写文件
+
+class Person
+{
+public:
+	char name[48];
+	int age;
+};
 int main()
 {
-	ifstream ifs;
-	ifs.open("test.txt", ios::in);
+	// 写文件
+	ofstream ofs("person.txt", ios::out | ios::binary);
+
+	Person p1 = { "张三", 18 };
+
+	ofs.write((const char*)&p1, sizeof(Person));
+
+	ofs.close();
+
+	// 读文件
+	ifstream ifs("person.txt", ios::in | ios::binary);
 	if (!ifs.is_open())
 	{
 		cout << "文件打开失败" << endl;
 		return 1;
 	}
-	// 读文件几种方式
-	// 第一种: 直接全部读取
-	//char buf[1024] = { 0 };
-	//while (ifs >> buf)
-	//{
-	//	cout << buf << endl;
-	//}
-	// 第二种：一行行地读
-	//char buf[1024] = { 0 };
-	//while (ifs.getline(buf, sizeof(buf)))
-	//{
-	//	cout << buf << endl;
-	//}
-	// 第三种：用string字符串接收
-	string buf;
-	while (getline(ifs, buf))
-	{
-		cout << buf << endl;
-	}
-	// 第四种：一个字符一个字符地读，不推荐
-	char c;
-	while ((c = ifs.get()) != EOF)
-	{
-		cout << c;
-	}
+
+	Person p2;
+	ifs.read((char*)&p2, 5*sizeof(Person));
+	cout << p2.name << p2.age << endl;
 
 	ifs.close();
 
