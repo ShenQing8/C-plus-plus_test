@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <cmath>
 using namespace std;
 
@@ -43,37 +44,37 @@ using namespace std;
 //	return 0;
 //}
 // 大佬解法
-int a[5][50] = { 0 };//定义数组a[i][j] 表示i位数和为j，j最大为9*i； 
-void num(int x) 
-{
-    int t = 0, sum = 0;//判断位数 
-    while (x) 
-    {
-        sum += x % 10;
-        x /= 10; t++;
-    }
-    a[t][sum]++;
-}
-int main() 
-{
-    int count = 0;
-    for (int i = 1; i <= 9999; i++) 
-    {
-        num(i);
-    }
-    for (int i = 1; i <= 4; i++) //左一半,1-4 
-    {
-        for (int j = 1; j <= i * 9; j++) 
-        {
-            for (int k = 1; k <= i; k++) //右一半只要比i小前面补0
-            {
-                count += a[i][j] * a[k][j];
-            }
-        }
-    }
-    cout << count << endl;
-    return 0;
-}
+//int a[5][50] = { 0 };//定义数组a[i][j] 表示i位数和为j，j最大为9*i； 
+//void num(int x) 
+//{
+//    int t = 0, sum = 0;//判断位数 
+//    while (x) 
+//    {
+//        sum += x % 10;
+//        x /= 10; t++;
+//    }
+//    a[t][sum]++;
+//}
+//int main() 
+//{
+//    int count = 0;
+//    for (int i = 1; i <= 9999; i++) 
+//    {
+//        num(i);
+//    }
+//    for (int i = 1; i <= 4; i++) //左一半,1-4 
+//    {
+//        for (int j = 1; j <= i * 9; j++) 
+//        {
+//            for (int k = 1; k <= i; k++) //右一半只要比i小前面补0
+//            {
+//                count += a[i][j] * a[k][j];
+//            }
+//        }
+//    }
+//    cout << count << endl;
+//    return 0;
+//}
 
 // 14届B组 A 统计日期
 
@@ -116,3 +117,68 @@ int main()
 //    return 0;
 //}
 
+
+//int main()
+//{
+//	int arr[5] = { 0 };
+//	for (int i = 0; i < 5; ++i)
+//	{
+//		arr[i] = i;
+//	}
+//	int* k = nullptr;
+//
+//	return 0;
+//}
+
+
+struct ListNode 
+{
+    int val;
+    ListNode* next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode* next) : val(x), next(next) {}
+    
+};
+class Solution 
+{
+public:
+    ListNode* deleteDuplicates(ListNode* head)
+    {
+        if (!head)
+        {
+            return head;
+        }
+        ListNode* cur = head;
+        while (cur->next)
+        {
+            if (cur->val == cur->next->val)
+            {
+                ListNode* tmp = cur->next;
+                cur->next = tmp->next;
+                delete tmp;
+            }
+            else
+                cur = cur->next;
+        }
+        return head;
+    }
+};
+int main()
+{
+    ListNode l1(1);
+    ListNode l2(1);
+    ListNode l3(2);
+    ListNode l4(2);
+    ListNode l5(3);
+
+    l1.next = &l2;
+    l2.next = &l3;
+    l3.next = &l4;
+    l4.next = &l5;
+
+    Solution sl;
+    ListNode* head = sl.deleteDuplicates(&l1);
+
+    return 0;
+}
