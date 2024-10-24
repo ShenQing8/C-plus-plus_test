@@ -184,57 +184,128 @@ struct ListNode
 //}
 
 
+//class Solution
+//{
+//public:
+//    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
+//    {
+//        //ListNode* head = new ListNode();
+//        //ListNode* tail = head;
+//        //while (l1 || l2)
+//        //{
+//        //    int n1 = l1 ? l1->val : 0;
+//        //    int n2 = l2 ? l2->val : 0;
+//        //    int sum = n1 + n2;
+//        //    int add = sum + tail->val;
+//        //    tail->val = add % 10;
+//        //    tail->next = new ListNode(add / 10);
+//        //    tail = tail->next;
+//        //    if (l1) l1 = l1->next;
+//        //    if (l2) l2 = l2->next;
+//        //}
+//        //if (tail->val == 0)
+//        //{
+//        //    delete tail;
+//        //    tail = NULL;
+//        //}
+//        //return head;
+//        ListNode* head = new ListNode();
+//        ListNode* tail = head;
+//        int carry = 0;
+//        while (l1 || l2 || carry) {
+//            int a = l1 ? l1->val : 0;
+//            int b = l2 ? l2->val : 0;
+//            int sum = a + b + carry;
+//            carry = sum >= 10 ? 1 : 0;
+//            tail->next = new ListNode(sum % 10);
+//            tail = tail->next;
+//            if (l1) l1 = l1->next;
+//            if (l2) l2 = l2->next;
+//        }
+//        return head->next;
+//    }
+//};
+//int main()
+//{
+//    Solution sol;
+//    ListNode l11(9);
+//    ListNode l12(2);
+//    ListNode l21(2);
+//    ListNode l22(3);
+//
+//    l11.next = &l12;
+//    l21.next = &l22;
+//    ListNode* get = sol.addTwoNumbers(&l11, &l21);
+//    return 0;
+//}
+
+void rev_list(ListNode** head, int k)
+{
+    ListNode** rev = head;
+    for (int i = 0; i < k - 1; ++i)
+    {
+        for (int j = 0; j <= i; ++j)
+        {
+            ListNode* tmp1 = *rev;
+            ListNode* tmp2 = (*rev)->next;
+            tmp1->next = tmp2->next;
+            tmp2->next = tmp1;
+            tmp2 = tmp1->next;
+        }
+        rev = head;
+    }
+}
 class Solution
 {
 public:
-    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
+    ListNode* reverseKGroup(ListNode* head, int k)
     {
-        //ListNode* head = new ListNode();
-        //ListNode* tail = head;
-        //while (l1 || l2)
-        //{
-        //    int n1 = l1 ? l1->val : 0;
-        //    int n2 = l2 ? l2->val : 0;
-        //    int sum = n1 + n2;
-        //    int add = sum + tail->val;
-        //    tail->val = add % 10;
-        //    tail->next = new ListNode(add / 10);
-        //    tail = tail->next;
-        //    if (l1) l1 = l1->next;
-        //    if (l2) l2 = l2->next;
-        //}
-        //if (tail->val == 0)
-        //{
-        //    delete tail;
-        //    tail = NULL;
-        //}
-        //return head;
-        ListNode* head = new ListNode();
-        ListNode* tail = head;
-        int carry = 0;
-        while (l1 || l2 || carry) {
-            int a = l1 ? l1->val : 0;
-            int b = l2 ? l2->val : 0;
-            int sum = a + b + carry;
-            carry = sum >= 10 ? 1 : 0;
-            tail->next = new ListNode(sum % 10);
-            tail = tail->next;
-            if (l1) l1 = l1->next;
-            if (l2) l2 = l2->next;
+        // 判断节点是否为空
+        if (!head)
+        {
+            return head;
         }
-        return head->next;
+        // 统计节点数量
+        ListNode* cur = head;
+        int count = 1;
+        while (cur->next)
+        {
+            ++count;
+            cur = cur->next;
+        }
+        // 得到翻转次数
+        int re_time = count / k;
+        // 翻转
+        ListNode* pre = head;
+        while (re_time)
+        {
+            rev_list(&pre, k);
+            for (int i = 0; i < k; ++i)
+            {
+                pre = pre->next;
+            }
+            --re_time;
+        }
+        // 返回头节点
+        return head;
     }
 };
 int main()
 {
-    Solution sol;
-    ListNode l11(9);
-    ListNode l12(2);
-    ListNode l21(2);
-    ListNode l22(3);
+    ListNode l1(1);
+    ListNode l2(2);
+    ListNode l3(3);
+    ListNode l4(4);
+    ListNode l5(5);
 
-    l11.next = &l12;
-    l21.next = &l22;
-    ListNode* get = sol.addTwoNumbers(&l11, &l21);
+    l1.next = &l2;
+    l2.next = &l3;
+    l3.next = &l4;
+    l4.next = &l5;
+
+    Solution sl;
+    ListNode* head = sl.reverseKGroup(&l1, 2);
+
+
     return 0;
 }
