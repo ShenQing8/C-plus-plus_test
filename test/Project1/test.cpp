@@ -239,29 +239,38 @@ struct ListNode
 //    return 0;
 //}
 
-void rev_list(ListNode** head, int k)
-{
-    ListNode** rev = head;
-    for (int i = 0; i < k - 1; ++i)
-    {
-        for (int j = 0; j <= i; ++j)
-        {
-            ListNode* tmp1 = *rev;
-            ListNode* tmp2 = (*rev)->next;
-            tmp1->next = tmp2->next;
-            tmp2->next = tmp1;
-            tmp2 = tmp1->next;
-        }
-        rev = head;
-    }
-}
+// k = 3:  2(2,1)
+// k = 4:  3(3,2,1)
+//ListNode* rev_list(ListNode*& head, int k)
+//{
+//    ListNode ahh(0);
+//    ahh.next = head;
+//    ListNode* pre = &ahh;// 头
+//    ListNode* tmp1 = pre->next;// 中
+//    ListNode* tmp2 = tmp1->next;// 尾
+//
+//    for (int i = 0; i < k - 1; ++i)
+//    {
+//        for (int j = 0; j < k - i - 1; ++j)
+//        {
+//            tmp2 = tmp1->next;
+//            pre->next = tmp1->next;
+//            tmp1->next = tmp2->next;
+//            tmp2->next = tmp1;
+//            pre = pre->next;
+//        }
+//        pre = &ahh;
+//        tmp1 = pre->next;
+//    }
+//    return ahh.next;
+//}
 class Solution
 {
 public:
     ListNode* reverseKGroup(ListNode* head, int k)
     {
-        // 判断节点是否为空
-        if (!head)
+        // 判断节点是否为空和翻转次数是否小于2
+        if (!head || k < 2)
         {
             return head;
         }
@@ -273,21 +282,59 @@ public:
             ++count;
             cur = cur->next;
         }
+        if (count == 1)// 如果只有一个节点，直接返回
+        {
+            return head;
+        }
         // 得到翻转次数
         int re_time = count / k;
         // 翻转
         ListNode* pre = head;
+        ListNode puu(0);
+        puu.next = head;
+        ListNode* pr_pre = &puu;
+
         while (re_time)
         {
-            rev_list(&pre, k);
+            pre = rev_list(pre, k);
+            pr_pre->next = pre;
+
             for (int i = 0; i < k; ++i)
             {
                 pre = pre->next;
             }
+            for (int i = 0; i < k; ++i)
+            {
+                pr_pre = pr_pre->next;
+            }
             --re_time;
         }
         // 返回头节点
-        return head;
+        return puu.next;
+    }
+private:
+    ListNode* rev_list(ListNode*& head, int k)
+    {
+        ListNode ahh(0);
+        ahh.next = head;
+        ListNode* pre = &ahh;// 头
+        ListNode* tmp1 = pre->next;// 中
+        ListNode* tmp2 = tmp1->next;// 尾
+
+        for (int i = 0; i < k - 1; ++i)
+        {
+            for (int j = 0; j < k - i - 1; ++j)
+            {
+                tmp2 = tmp1->next;
+                pre->next = tmp1->next;
+                tmp1->next = tmp2->next;
+                tmp2->next = tmp1;
+                pre = pre->next;
+            }
+            pre = &ahh;
+            tmp1 = pre->next;
+        }
+        return ahh.next;
     }
 };
 int main()
