@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+#include <vector>
+#include <stack>
+#include <queue>
 using namespace std;
 
 // 14届A组 A 幸运数
@@ -239,120 +242,290 @@ struct ListNode
 //    return 0;
 //}
 
-// k = 3:  2(2,1)
-// k = 4:  3(3,2,1)
-//ListNode* rev_list(ListNode*& head, int k)
+
+// 翻转k个一组的链表
+
+//class Solution
 //{
-//    ListNode ahh(0);
-//    ahh.next = head;
-//    ListNode* pre = &ahh;// 头
-//    ListNode* tmp1 = pre->next;// 中
-//    ListNode* tmp2 = tmp1->next;// 尾
-//
-//    for (int i = 0; i < k - 1; ++i)
+//public:
+//    ListNode* reverseKGroup(ListNode* head, int k)
 //    {
-//        for (int j = 0; j < k - i - 1; ++j)
+//        // 判断节点是否为空和翻转次数是否小于2
+//        if (!head || k < 2)
 //        {
-//            tmp2 = tmp1->next;
-//            pre->next = tmp1->next;
-//            tmp1->next = tmp2->next;
-//            tmp2->next = tmp1;
-//            pre = pre->next;
+//            return head;
 //        }
-//        pre = &ahh;
-//        tmp1 = pre->next;
+//        // 统计节点数量
+//        ListNode* cur = head;
+//        int count = 1;
+//        while (cur->next)
+//        {
+//            ++count;
+//            cur = cur->next;
+//        }
+//        if (count == 1)// 如果只有一个节点，直接返回
+//        {
+//            return head;
+//        }
+//        // 得到翻转次数
+//        int re_time = count / k;
+//        // 翻转
+//        ListNode* pre = head;
+//        ListNode puu(0);
+//        puu.next = head;
+//        ListNode* pr_pre = &puu;
+//
+//        while (re_time)
+//        {
+//            pre = rev_list(pre, k);
+//            pr_pre->next = pre;
+//
+//            for (int i = 0; i < k; ++i)
+//            {
+//                pre = pre->next;
+//            }
+//            for (int i = 0; i < k; ++i)
+//            {
+//                pr_pre = pr_pre->next;
+//            }
+//            --re_time;
+//        }
+//        // 返回头节点
+//        return puu.next;
 //    }
-//    return ahh.next;
+//private:
+//    ListNode* rev_list(ListNode*& head, int k)
+//    {
+//        ListNode ahh(0);
+//        ahh.next = head;
+//        ListNode* pre = &ahh;// 头
+//        ListNode* tmp1 = pre->next;// 中
+//        ListNode* tmp2 = tmp1->next;// 尾
+//
+//        for (int i = 0; i < k - 1; ++i)
+//        {
+//            for (int j = 0; j < k - i - 1; ++j)
+//            {
+//                tmp2 = tmp1->next;
+//                pre->next = tmp1->next;
+//                tmp1->next = tmp2->next;
+//                tmp2->next = tmp1;
+//                pre = pre->next;
+//            }
+//            pre = &ahh;
+//            tmp1 = pre->next;
+//        }
+//        return ahh.next;
+//    }
+//};
+//int main()
+//{
+//    ListNode l1(1);
+//    ListNode l2(2);
+//    ListNode l3(3);
+//    ListNode l4(4);
+//    ListNode l5(5);
+//
+//    l1.next = &l2;
+//    l2.next = &l3;
+//    l3.next = &l4;
+//    l4.next = &l5;
+//
+//    Solution sl;
+//    ListNode* head = sl.reverseKGroup(&l1, 2);
+//
+//
+//    return 0;
 //}
-class Solution
-{
+
+
+//class Solution
+//{
+//public:
+//    int calPoints(vector<string>& operations)
+//    {
+//        int size = operations.size();
+//        int sum = 0;
+//        stack<int> chc;
+//        for (int i = 0; i < size; ++i)
+//        {
+//            if (operations[i] == "+")
+//            {
+//                int s1 = chc.top();
+//                chc.pop();
+//                int s2 = chc.top();
+//                chc.push(s1);
+//                chc.push(s1 + s2);
+//            }
+//            else if (operations[i] == "D")
+//            {
+//                int top = chc.top();
+//                chc.push(2 * top);
+//            }
+//            else if (operations[i] == "C")
+//            {
+//                chc.pop();
+//            }
+//            else
+//            {
+//                chc.push(stoi(operations[i]));
+//            }
+//        }
+//        int size_sum = chc.size();
+//        for (int j = 0; j < size_sum; ++j)
+//        {
+//            sum += chc.top();
+//            chc.pop();
+//        }
+//        return sum;
+//    }
+//};
+//int main()
+//{
+//    vector<string> operations;
+//    operations = { "5","2","C","D","+" };
+//    Solution sl;
+//    int sum = sl.calPoints(operations);
+//    cout << sum << endl;
+//    
+//    return 0;
+//}
+
+//class Solution
+//{
+//public:
+//    bool backspaceCompare(string s, string t)
+//    {
+//        stack<char> d1;
+//        stack<char> d2;
+//        int l1 = s.size();
+//        int l2 = t.size();
+//        for (int i = 0; i < l1; ++i)
+//        {
+//            if (s[i] == '#')
+//            {
+//                if (d1.size())
+//                    d1.pop();
+//            }
+//            else
+//            {
+//                d1.push(s[i]);
+//            }
+//        }
+//        for (int i = 0; i < l2; ++i)
+//        {
+//            if (t[i] == '#')
+//            {
+//                if (d2.size())
+//                    d2.pop();
+//            }
+//            else
+//            {
+//                d2.push(t[i]);
+//            }
+//        }
+//        int s1 = d1.size();
+//        int s2 = d2.size();
+//        if (s1 != s2)
+//        {
+//            return false;
+//        }
+//        else
+//        {
+//            for (int i = 0; i < s1; ++i)
+//            {
+//                if (d1.top() != d2.top())
+//                {
+//                    return false;
+//                }
+//                d1.pop();
+//                d2.pop();
+//            }
+//        }
+//        return true;
+//    }
+//};
+// 大佬解法，空间复杂度O(1)
+//class Solution 
+//{
+//public:
+//    bool backspaceCompare(string s, string t) 
+//    {
+//        int s_n = 0, t_n = 0;
+//        for (int i = 0; i < s.size(); i++) 
+//        {
+//            if (s[i] != '#')s[s_n++] = s[i];
+//            else 
+//            {
+//                if (s_n > 0)s_n--;
+//            }
+//        }
+//        for (int i = 0; i < t.size(); i++) 
+//        {
+//            if (t[i] != '#')t[t_n++] = t[i];
+//            else 
+//            {
+//                if (t_n > 0)t_n--;
+//            }
+//        }
+//        if (s_n != t_n)return false;
+//        for (int i = 0; i < s_n; i++) 
+//        {
+//            if (s[i] != t[i])return false;
+//        }
+//        return true;
+//    }
+//};
+//int main()
+//{
+//    string s = "aaa###a";
+//    string t = "aaaa###a";
+//    Solution sl;
+//    bool k = sl.backspaceCompare(s, t);
+//    cout << k << endl;
+//    return 0;
+//}
+
+class Solution {
 public:
-    ListNode* reverseKGroup(ListNode* head, int k)
+    bool isPalindrome(ListNode* head)
     {
-        // 判断节点是否为空和翻转次数是否小于2
-        if (!head || k < 2)
-        {
-            return head;
-        }
-        // 统计节点数量
+        int count = 0;
+        vector<char> chc;
         ListNode* cur = head;
-        int count = 1;
-        while (cur->next)
+        while (cur)
         {
+            chc.push_back(cur->val);
             ++count;
             cur = cur->next;
         }
-        if (count == 1)// 如果只有一个节点，直接返回
+        int i = 0;
+        int j = count - 1;
+        while (i <= j)
         {
-            return head;
-        }
-        // 得到翻转次数
-        int re_time = count / k;
-        // 翻转
-        ListNode* pre = head;
-        ListNode puu(0);
-        puu.next = head;
-        ListNode* pr_pre = &puu;
-
-        while (re_time)
-        {
-            pre = rev_list(pre, k);
-            pr_pre->next = pre;
-
-            for (int i = 0; i < k; ++i)
+            if (chc[i] != chc[j])
             {
-                pre = pre->next;
+                return false;
             }
-            for (int i = 0; i < k; ++i)
-            {
-                pr_pre = pr_pre->next;
-            }
-            --re_time;
+            ++i;
+            --j;
         }
-        // 返回头节点
-        return puu.next;
-    }
-private:
-    ListNode* rev_list(ListNode*& head, int k)
-    {
-        ListNode ahh(0);
-        ahh.next = head;
-        ListNode* pre = &ahh;// 头
-        ListNode* tmp1 = pre->next;// 中
-        ListNode* tmp2 = tmp1->next;// 尾
-
-        for (int i = 0; i < k - 1; ++i)
-        {
-            for (int j = 0; j < k - i - 1; ++j)
-            {
-                tmp2 = tmp1->next;
-                pre->next = tmp1->next;
-                tmp1->next = tmp2->next;
-                tmp2->next = tmp1;
-                pre = pre->next;
-            }
-            pre = &ahh;
-            tmp1 = pre->next;
-        }
-        return ahh.next;
+        return true;
     }
 };
 int main()
 {
     ListNode l1(1);
     ListNode l2(2);
-    ListNode l3(3);
-    ListNode l4(4);
-    ListNode l5(5);
+    ListNode l3(2);
+    ListNode l4(1);
 
     l1.next = &l2;
     l2.next = &l3;
     l3.next = &l4;
-    l4.next = &l5;
 
     Solution sl;
-    ListNode* head = sl.reverseKGroup(&l1, 2);
-
+    sl.isPalindrome(&l1);
 
     return 0;
 }
