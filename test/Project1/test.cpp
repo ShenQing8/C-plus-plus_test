@@ -486,46 +486,117 @@ struct ListNode
 //    return 0;
 //}
 
-class Solution {
-public:
-    bool isPalindrome(ListNode* head)
-    {
-        int count = 0;
-        vector<char> chc;
-        ListNode* cur = head;
-        while (cur)
-        {
-            chc.push_back(cur->val);
-            ++count;
-            cur = cur->next;
-        }
-        int i = 0;
-        int j = count - 1;
-        while (i <= j)
-        {
-            if (chc[i] != chc[j])
-            {
-                return false;
-            }
-            ++i;
-            --j;
-        }
-        return true;
-    }
-};
+//class Solution {
+//public:
+//    bool isPalindrome(ListNode* head)
+//    {
+//        int count = 0;
+//        vector<char> chc;
+//        ListNode* cur = head;
+//        while (cur)
+//        {
+//            chc.push_back(cur->val);
+//            ++count;
+//            cur = cur->next;
+//        }
+//        int i = 0;
+//        int j = count - 1;
+//        while (i <= j)
+//        {
+//            if (chc[i] != chc[j])
+//            {
+//                return false;
+//            }
+//            ++i;
+//            --j;
+//        }
+//        return true;
+//    }
+//};
+//int main()
+//{
+//    ListNode l1(1);
+//    ListNode l2(2);
+//    ListNode l3(2);
+//    ListNode l4(1);
+//
+//    l1.next = &l2;
+//    l2.next = &l3;
+//    l3.next = &l4;
+//
+//    Solution sl;
+//    sl.isPalindrome(&l1);
+//
+//    return 0;
+//}
+
+
+long long A[100100];
+long long B[100100];
 int main()
 {
-    ListNode l1(1);
-    ListNode l2(2);
-    ListNode l3(2);
-    ListNode l4(1);
+    long long count = 0;
+    int n;
+    cin >> n;
+    for (int i = 1; i <= n; i++)
+        cin >> A[i];
+    for (int i = 1; i <= n / 2; i++)
+        B[i] = A[n - i + 1] - A[i];
 
-    l1.next = &l2;
-    l2.next = &l3;
-    l3.next = &l4;
-
-    Solution sl;
-    sl.isPalindrome(&l1);
-
+    for (int i = 1; i <= n / 2; i++)
+    {
+        if (B[i] > 0 && B[i + 1] > 0)
+        {
+            if (B[i] < B[i + 1])
+            {
+                count += min(B[i], B[i + 1]);
+                B[i + 1] -= B[i];
+            }
+            else
+            {
+                count += max(B[i], B[i + 1]);
+                i++;
+            }
+        }
+        else if (B[i] < 0 && B[i + 1] < 0)
+        {
+            if (B[i] > B[i + 1])
+            {
+                count += abs(max(B[i], B[i + 1]));
+                B[i + 1] -= B[i];
+            }
+            else
+            {
+                count += abs(min(B[i], B[i + 1]));
+                i++;
+            }
+        }
+        else
+        {
+            count += abs(B[i]);
+        }
+    }
+    cout << count;
     return 0;
 }
+//const int N = 100100;
+//long long a[N], b[N], sum = 0;
+//int main() {
+//    int n; cin >> n;
+//    for (int i = 1; i <= n; i++) cin >> a[i];
+//    for (int i = 1; i <= n / 2; i++) b[i] = a[n - i + 1] - a[i];
+//
+//    for (int i = 1; i <= n / 2; i++) {
+//        if (b[i] > 0 && b[i + 1] > 0) {//如果相邻同正
+//            if (b[i + 1] > b[i]) sum += min(b[i], b[i + 1]), b[i + 1] -= b[i];//如果后一个数比前一个数大 就取最小
+//            else sum += max(b[i], b[i + 1]), i++;//如果后一个数比前一个数小 就取最大 并且后移一位继续比较
+//        }
+//        else if (b[i] < 0 && b[i + 1] < 0) {//如果相邻同负
+//            if (b[i + 1] < b[i]) sum += abs(max(b[i], b[i + 1])), b[i + 1] -= b[i];//同理
+//            else sum += abs(min(b[i], b[i + 1])), i++;
+//        }
+//        else sum += abs(b[i]);//如果相邻异号
+//    }
+//    cout << sum;
+//    return 0;
+//}
