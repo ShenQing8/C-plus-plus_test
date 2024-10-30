@@ -4,6 +4,7 @@
 #include <vector>
 #include <stack>
 #include <queue>
+#include <unordered_map>
 using namespace std;
 
 // 14届A组 A 幸运数
@@ -531,54 +532,55 @@ struct ListNode
 //}
 
 
-long long A[100100];
-long long B[100100];
-int main()
-{
-    long long count = 0;
-    int n;
-    cin >> n;
-    for (int i = 1; i <= n; i++)
-        cin >> A[i];
-    for (int i = 1; i <= n / 2; i++)
-        B[i] = A[n - i + 1] - A[i];
-
-    for (int i = 1; i <= n / 2; i++)
-    {
-        if (B[i] > 0 && B[i + 1] > 0)
-        {
-            if (B[i] < B[i + 1])
-            {
-                count += min(B[i], B[i + 1]);
-                B[i + 1] -= B[i];
-            }
-            else
-            {
-                count += max(B[i], B[i + 1]);
-                i++;
-            }
-        }
-        else if (B[i] < 0 && B[i + 1] < 0)
-        {
-            if (B[i] > B[i + 1])
-            {
-                count += abs(max(B[i], B[i + 1]));
-                B[i + 1] -= B[i];
-            }
-            else
-            {
-                count += abs(min(B[i], B[i + 1]));
-                i++;
-            }
-        }
-        else
-        {
-            count += abs(B[i]);
-        }
-    }
-    cout << count;
-    return 0;
-}
+//long long A[100100];
+//long long B[100100];
+//int main()
+//{
+//    long long count = 0;
+//    int n;
+//    cin >> n;
+//    for (int i = 1; i <= n; i++)
+//        cin >> A[i];
+//    for (int i = 1; i <= n / 2; i++)
+//        B[i] = A[n - i + 1] - A[i];
+//
+//    for (int i = 1; i <= n / 2; i++)
+//    {
+//        if (B[i] > 0 && B[i + 1] > 0)
+//        {
+//            if (B[i] < B[i + 1])
+//            {
+//                count += min(B[i], B[i + 1]);
+//                B[i + 1] -= B[i];
+//            }
+//            else
+//            {
+//                count += max(B[i], B[i + 1]);
+//                i++;
+//            }
+//        }
+//        else if (B[i] < 0 && B[i + 1] < 0)
+//        {
+//            if (B[i] > B[i + 1])
+//            {
+//                count += abs(max(B[i], B[i + 1]));
+//                B[i + 1] -= B[i];
+//            }
+//            else
+//            {
+//                count += abs(min(B[i], B[i + 1]));
+//                i++;
+//            }
+//        }
+//        else
+//        {
+//            count += abs(B[i]);
+//        }
+//    }
+//    cout << count;
+//    return 0;
+//}
+// 思路来源
 //const int N = 100100;
 //long long a[N], b[N], sum = 0;
 //int main() {
@@ -600,3 +602,87 @@ int main()
 //    cout << sum;
 //    return 0;
 //}
+
+// 官方题解：
+//class Solution {
+//public:
+//    int numSubarraysWithSum(vector<int>& nums, int goal) {
+//        int sum = 0;
+//        unordered_map<int, int> cnt;
+//        int ret = 0;
+//        for (auto& num : nums) {
+//            cnt[sum]++;
+//            sum += num;
+//            ret += cnt[sum - goal];
+//        }
+//        return ret;
+//    }
+//};
+// 自己的题解：
+//class Solution
+//{
+//public:
+//    int numSubarraysWithSum(vector<int>& nums, int goal)
+//    {
+//        int nums_sz = nums.size();
+//        const int cnt_sz = nums.size() + 10;
+//        vector<int> cnt(cnt_sz, 0);
+//        int ans = 0;
+//        for (int i = 1; i < nums_sz; ++i)
+//        {
+//            nums[i] += nums[i - 1];
+//        }
+//        cnt[0] = 1;
+//        for (int i = 0; i <= nums_sz - 1; ++i)
+//        {
+//            ++cnt[nums[i]];
+//        }
+//        if (nums[nums_sz - 1] == 0)
+//        {
+//            for (int i = 1; i <= nums_sz; ++i)
+//            {
+//                ans += i;
+//            }
+//        }
+//        else
+//        {
+//            for (int i = goal; i <= nums[nums_sz - 1]; ++i)
+//            {
+//                ans += cnt[i] * cnt[i - goal];
+//            }
+//        }
+//        return ans;
+//    }
+//};
+//int main()
+//{
+//    vector<int> nums;
+//    nums = { 0,1,1,0,0,0,1,1,0,1,0,1,0 };
+//    Solution sl;
+//    cout << sl.numSubarraysWithSum(nums, 3) << endl; 
+//    return 0;
+//}
+
+class Solution
+{
+public:
+    string getSmallestString(string s)
+    {
+        for (int i = 0; i < s.size() - 1; ++i)
+        {
+            if (s[i] % 2 == s[i + 1] && s[i] > s[i + 1])
+            {
+                swap(s[i], s[i + 1]);
+                break;
+            }
+        }
+        return s;
+    }
+};
+int main()
+{
+    string s = "000004322677566";
+    Solution sl;
+    cout << sl.getSmallestString(s) << endl;
+    return 0;
+}
