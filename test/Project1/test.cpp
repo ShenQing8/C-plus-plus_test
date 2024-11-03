@@ -5,6 +5,7 @@
 #include <stack>
 #include <queue>
 #include <unordered_map>
+#include <algorithm>
 using namespace std;
 
 // 14届A组 A 幸运数
@@ -663,26 +664,204 @@ struct ListNode
 //    return 0;
 //}
 
-class Solution
-{
-public:
-    string getSmallestString(string s)
-    {
-        for (int i = 0; i < s.size() - 1; ++i)
-        {
-            if (s[i] % 2 == s[i + 1] && s[i] > s[i + 1])
-            {
-                swap(s[i], s[i + 1]);
-                break;
-            }
-        }
-        return s;
-    }
-};
-int main()
-{
-    string s = "000004322677566";
-    Solution sl;
-    cout << sl.getSmallestString(s) << endl;
-    return 0;
-}
+//class Solution
+//{
+//public:
+//    string getSmallestString(string s)
+//    {
+//        for (int i = 0; i < s.size() - 1; ++i)
+//        {
+//            if (s[i] % 2 == s[i + 1] && s[i] > s[i + 1])
+//            {
+//                swap(s[i], s[i + 1]);
+//                break;
+//            }
+//        }
+//        return s;
+//    }
+//};
+//int main()
+//{
+//    string s = "000004322677566";
+//    Solution sl;
+//    cout << sl.getSmallestString(s) << endl;
+//    return 0;
+//}
+
+//int main(int argc, char *argv[])
+//{
+//  long long MAX = 2024041331404202;
+//  long long a=0;
+//  long long b=1;
+//  long long count = 0;
+//  for (long long i = 1; i <= 1000; ++i)
+//  {
+//      a += i;
+//      b *= i;
+//      if ((a - b) % 100 == 0)
+//      {
+//          cout << i << ',';
+//          ++count;
+//      }
+//  }
+//  long long A = 0;
+//  long long B = 1;
+//  for (int i = 1; i < 25; ++i)
+//  {
+//      A += i;
+//      B *= i;
+//  }
+//  cout << '\n' << "A:" << A << endl;
+//  cout << "B;" << B << endl;
+//  cout << A - B << endl;
+//  cout << '\n' << count;
+//  return 0;
+//}
+
+//bool loop(int year)
+//{
+//    return ((year % 4 == 0 && year / 100 != 0) || (year % 400 == 0));
+//}
+//bool is_year(int year, int month, int day)
+//{
+//    int days[13] = { 0,31,28 + loop(year),31,30,31,30,31,31,30,31,30,31 };
+//    if (month > 0 && month < 13)
+//    {
+//        if (day > 0 && day <= days[month])
+//        {
+//            return true;
+//        }
+//        return false;
+//    }
+//    return false;
+//}
+//int main()
+//{
+//    int hash[10] = {13, 1, 2, 3, 5, 4, 4, 2, 2, 2};
+//    int sum = 0;
+//    int spe = 0;
+//    for (int i = 20000101; i <= 20240413; ++i)
+//    {
+//        int year = i / 10000;
+//        int month = i % 10000 / 100;
+//        int day = i % 100;
+//
+//        if (!(is_year(year, month, day)))
+//            continue;
+//
+//        int tmp_i = i;
+//        for (int j = 0; j < 8; ++j)
+//        {
+//            spe += hash[tmp_i % 10];
+//            tmp_i /= 10;
+//        }
+//        if (spe > 50)
+//            ++sum;
+//        spe = 0;
+//    }
+//    cout << sum << endl;
+//    return 0;
+//}
+
+// 第15届，省赛，A组，C题
+
+// 垃圾小代码，我自己写的，呜呜┭┮﹏┭┮，下面有好思路
+// 时间复杂度O(n^2)
+//int main()
+//{
+//    long long sum = 0;// 所需金币数
+//    long long n = 0;
+//    long long S = 0;
+//    cin >> n >> S;
+//    vector<long long> p(n, 0);// 单次训练所需金币
+//    vector<long long> c(n, 0);// 每个士兵所需训练的次数
+//    long long sig_sum = 0;// 单次需要训练总和
+//
+//    for (int i = 0; i < n; ++i)
+//    {
+//        cin >> p[i] >> c[i];
+//        sig_sum += p[i];
+//    }
+//
+//    // 判断训练是否完成
+//    bool flag = 1;
+//
+//    while (flag)
+//    {
+//        // 选择一起训练还是单独训练
+//        // 需要训练的士兵单次训练所需金币总和与S进行比较
+//        if (sig_sum > S)
+//        {// 改c、jug、sig_sum
+//            sum += S;
+//            for (int i = 0; i < n; ++i)
+//            {
+//                if (c[i])
+//                {
+//                    --c[i];
+//                    if (c[i] == 0)
+//                        sig_sum -= p[i];
+//                }
+//            }
+//        }
+//        else
+//        {
+//            for (int i = 0; i < n; ++i)
+//                sum += (p[i] * c[i]);
+//            flag = 0;
+//        }
+//    }
+//
+//    // 输出结果
+//    cout << sum;
+//    return 0;
+//}
+// 借鉴大佬思路，刷子法，多了个排序
+// 时间复杂度O(n)
+//struct Node
+//{
+//    long long p;// 金币
+//    long long c;// 次数
+//}a[100010];
+//bool cmp(Node& p1, Node& p2)
+//{
+//    return p1.c < p2.c;
+//}
+//int main()
+//{
+//    long long sum = 0;// 所需金币数
+//    long long n = 0;
+//    long long S = 0;
+//    cin >> n >> S;
+//
+//    long long sig_sum = 0;// 单次需要训练总和
+//
+//    for (int i = 0; i < n; ++i)
+//    {
+//        cin >> a[i].p >> a[i].c;
+//        sig_sum += a[i].p;
+//    }
+//    sort(a, a + n, cmp);
+//
+//    // 刷子
+//    long long tm = 0;
+//
+//    for(int i = 0; i < n; ++i)
+//    {
+//        // 选择一起训练还是单独训练
+//        // 需要训练的士兵单次训练所需金币总和与S进行比较
+//        if (sig_sum >= S)
+//        {
+//            sum += S * (a[i].c - tm);
+//            tm += (a[i].c - tm);
+//            sig_sum -= a[i].p;
+//        }
+//        else
+//        {
+//            sum += a[i].p * (a[i].c - tm);
+//        }
+//    }
+//
+//    // 输出结果
+//    cout << sum << endl;
+//    return 0;
+//}
